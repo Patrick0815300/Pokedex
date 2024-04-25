@@ -1,5 +1,5 @@
 let pokedex = [];
-let firstLoad = 11; 
+let firstLoad = 21; 
 
 async function init() {
      await getPokedex();
@@ -17,7 +17,6 @@ async function loadPokedex(i) {
     let response = await fetch(url);
     let responseToJson = await response.json();
     pokedex.push(responseToJson);
-    console.log('Pokedex: ', pokedex)
 }
 
 
@@ -37,12 +36,12 @@ function renderCard(i) {
     renderPokemonName(i);
     renderPokemonType(i);
     renderPokemonID(i);
+    colorizeCard(i);
 }
 
 function renderPokemonName(i) {
     let name = pokedex[i]['name'];
     let nameContent = document.getElementById(`pokemonName${i}`);
-    console.log('Name: ', name)
     nameContent.innerHTML = name;
 }   
 
@@ -51,8 +50,7 @@ function renderPokemonType(i) {
     let typeContent = document.getElementById(`pokemonTypes${i}`);
     for (let i = 0; i < types.length; i++) {
         const type = types[i]['type']['name'];
-        console.log('Type: ', type);  
-        typeContent.innerHTML += `<div class="pokemonType">${type}</div>`; 
+        typeContent.innerHTML += `<div class="pokemon-type">${type}</div>`; 
     }
 }
 
@@ -60,4 +58,41 @@ function renderPokemonID(i) {
     let id = pokedex[i]['id'];
     let content = document.getElementById(`pokemonID${i}`);
     content.innerHTML = '# ' + id;
+}
+
+function colorizeCard(i) {
+    let cardContent = document.getElementById(`pokemonCard${i}`);
+    let type = pokedex[i]['types'][0]['type']['name'];
+
+    if (type === 'grass') {
+        cardContent.classList.add('bg-color-grass')
+    } else {
+        if (type === 'fire') {
+            cardContent.classList.add('bg-color-fire')
+        } else {
+            if (type === 'water') {
+                cardContent.classList.add('bg-color-water')
+            } else {
+                if (type === 'poison') {
+                    cardContent.classList.add('bg-color-poison')
+                } else {
+                    if (type === 'bug') {
+                        cardContent.classList.add('bg-color-bug')
+                    } else {
+                        if (type === 'electric') {
+                            cardContent.classList.add('bg-color-electric')
+                        } else {
+                            cardContent.classList.add('bg-color-normal')
+                        }
+                    }
+                }
+            }
+        }
+    } 
+}
+
+function colorizeType(i) {
+    let typeContent = document.getElementById(`pokemonTypes${i}`);
+    let type = pokedex[i]['types'][0]['type']['name'];
+ 
 }

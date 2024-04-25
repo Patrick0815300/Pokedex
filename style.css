@@ -139,6 +139,10 @@ body {
     padding: 24px;
     border-radius: 24px;
     margin-bottom: -32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .big-card-pokemon-img {
@@ -167,4 +171,8 @@ body {
     padding-right: 24px;
     padding-bottom: 24px;
     padding-top: 40px;
+}
+
+.about-table {
+    margin-top: 24px;
 }

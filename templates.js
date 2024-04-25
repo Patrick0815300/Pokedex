@@ -25,41 +25,58 @@ function openPokemonCardTemp(i) {
         <div class="container-big-card">
             <div class="big-card">
                 <div class="big-card-top">
-                    <div style="display:flex; justify-content: space-between" >
+                    <div style="display:flex; justify-content: space-between; width: 100%" >
                         <img class="icon" src="./img/arrow-left.svg" alt="arrow-back">
                         <img class="icon" src="./img/heart.svg" alt="like-button">
                     </div>
-                    <div style="display:flex; justify-content: space-between">
+                    <div style="display:flex; justify-content: space-between; width: 100%">
                         <span class="big-card-pokemon-name">${pokedex[i]['name']}</span>
                         <span class="big-card-pokemon-name"># ${pokedex[i]['id']}</span>
                     </div>
-                    <div>
+                    <div style="display:flex; justify-content: flex-start; width: 100%">
                         <span class="pokemon-type"></span>
                     </div>
                     <img class="big-card-pokemon-img" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/${i+1}.png" alt="Pokemon-IMG">
                 </div>
                 <div class="info-card">
-                    <div class="navbar">
 
+                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">About</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">Base Stats</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact-tab-pane" type="button" role="tab" aria-controls="contact-tab-pane" aria-selected="false">Evolution</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="disabled-tab" data-bs-toggle="tab" data-bs-target="#disabled-tab-pane" type="button" role="tab" aria-controls="disabled-tab-pane" aria-selected="false">Moves</button>
+                        </li>
+                    </ul>
+                    <div class="tab-content" id="myTabContent">
+                        <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
+                            <table class="about-table">
+                                <tr class="table-row">
+                                    <td>Height</td>
+                                    <td>${pokedex[i]['height']}"</td>
+                                </tr>
+                                <tr>
+                                    <td>Weight</td>
+                                    <td>${pokedex[i]['weight']} lbs</td>
+                                </tr>
+                                <tr>
+                                    <td>Abilities</td>
+                                    <td>${pokedex[i]['abilities'][0]['ability']['name']}, ${pokedex[i]['abilities'][1]['ability']['name']}</td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
+                            
+                        </div>
+                        <div class="tab-pane fade" id="contact-tab-pane" role="tabpanel" aria-labelledby="contact-tab" tabindex="0">...</div>
+                        <div class="tab-pane fade" id="disabled-tab-pane" role="tabpanel" aria-labelledby="disabled-tab" tabindex="0">...</div>
                     </div>
-                    <table>
-                        <tr>
-                            <td>Species</td>
-                            <td>Info</td>
-                        </tr>
-                        <tr>
-                            <td>Height</td>
-                            <td>Info</td>
-                        </tr>
-                        <tr>
-                            <td>Weight</td>
-                            <td>Info</td>
-                        </tr>
-                        <tr>
-                            <td>Abilities</td>
-                            <td>Info</td>
-                        </tr>
-                    </table>
                 </div>
             </div>
         </div>

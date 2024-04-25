@@ -16,12 +16,18 @@ body {
 .name-and-id {
     font-size: 24px;
     font-weight: bold; 
+    display: flex;
+    justify-content: space-between;
 }
 
 .pokemon-img {
     width: 150px;
     height: 150px;
     object-fit: cover;
+}
+
+.pokemon-img:hover {
+    transform: scale(1.2);
 }
 
 .type-and-img {

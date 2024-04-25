@@ -16,6 +16,6 @@ function renderEmptyCard(i) {
     return /* html */ `
     <div class="pokemon-card" id="pokemonCard${i}">
 
-    </div>  
+    </div>     
     `;
 }

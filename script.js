@@ -91,8 +91,8 @@ function colorizeCard(i) {
     } 
 }
 
-function colorizeType(i) {
-    let typeContent = document.getElementById(`pokemonTypes${i}`);
-    let type = pokedex[i]['types'][0]['type']['name'];
- 
+function changeFirstLoad() {
+    pokedex = [];
+    firstLoad = firstLoad + 20;
+    init();
 }

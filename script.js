@@ -96,3 +96,8 @@ function changeFirstLoad() {
     firstLoad = firstLoad + 20;
     init();
 }
+
+function openPokemonCard(i) {
+    let content = document.getElementById('container')
+    content.innerHTML += openPokemonCardTemp(i);
+}

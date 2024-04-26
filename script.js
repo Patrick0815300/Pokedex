@@ -164,7 +164,6 @@ function pokemonMoves(i) {
 
 function renderChart(i) {
     let statData = pokedex[i]['stats'];
-
     const ctx = document.getElementById('myChart');
     new Chart(ctx, {
         type: 'bar',
@@ -189,7 +188,7 @@ function renderChart(i) {
                 'rgb(153, 102, 255)',
                 'rgb(201, 203, 207)'
                 ],
-            label: '# of Votes',
+            label: '# Points',
             data: [statData[0]['base_stat'], statData[1]['base_stat'], statData[2]['base_stat'], statData[3]['base_stat'], statData[4]['base_stat'], statData[5]['base_stat']],
             borderWidth: 1
         }]
@@ -214,3 +213,30 @@ function pokemonEvolution(i) {
         content.innerHTML = preEvolution; 
     }
 }   
+
+function closeBigCard() {
+    renderCardsContainer();
+}
+
+function handleClick(event) {
+    const clickedElemtent = event.target
+    if (clickedElement.classList.contains('big-card')) {
+        
+    } else {
+        close();
+    }
+}
+
+function nextCard(i) {
+    let newIndex = i + 1;
+    closeBigCard();
+    openPokemonCard(newIndex);
+}
+
+function previousCard(i) {
+    let newIndex = i - 1;
+    closeBigCard();
+    if (newIndex >= 0) {
+        openPokemonCard(newIndex);
+    }
+}

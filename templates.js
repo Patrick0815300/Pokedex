@@ -23,10 +23,11 @@ function renderEmptyCard(i) {
 function openPokemonCardTemp(i) {
     return /* html */ `
         <div class="container-big-card">
+            <div><img class="previous-next-arrow" src="./img/arrow-left-dark.svg" onclick="previousCard(${i})"></div>
             <div class="big-card">
                 <div class="big-card-top" id="bigCardTop${i}">
                     <div style="display:flex; justify-content: space-between; width: 100%" >
-                        <img class="icon" src="./img/arrow-left.svg" alt="arrow-back">
+                        <img class="icon" src="./img/arrow-left.svg" alt="arrow-back" onclick="closeBigCard(${i})">
                         <img class="icon" src="./img/heart.svg" alt="like-button">
                     </div>
                     <div class="big-card-name-and-id">
@@ -58,15 +59,15 @@ function openPokemonCardTemp(i) {
                         <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
                             <table class="about-table">
                                 <tr>
-                                    <td>Height</td>
+                                    <td>Height:</td>
                                     <td>${pokedex[i]['height']}"</td>
                                 </tr>
                                 <tr>
-                                    <td>Weight</td>
+                                    <td>Weight:</td>
                                     <td>${pokedex[i]['weight']} lbs</td>
                                 </tr>
                                 <tr>
-                                    <td>Abilities</td>
+                                    <td>Abilities:</td>
                                     <td>${pokedex[i]['abilities'][0]['ability']['name']}, ${pokedex[i]['abilities'][1]['ability']['name']}</td>
                                 </tr>
                             </table>
@@ -89,6 +90,7 @@ function openPokemonCardTemp(i) {
                     </div>
                 </div>
             </div>
+            <div><img class="previous-next-arrow" src="./img/arrow-right-dark.svg" onclick="nextCard(${i})"></div>
         </div>
     `;
  

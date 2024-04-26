@@ -163,6 +163,11 @@ body {
     height: 20px;
     object-fit: cover;
     margin-bottom: 16px;
+    cursor: pointer;
+}
+
+.icon:hover {
+    transform: scale(1.05);
 }
 
 .big-card-name-and-id {
@@ -189,10 +194,12 @@ body {
     padding-bottom: 24px;
     padding-top: 40px;
     color: black;
+    height: 300px;
 }
 
 .about-table {
-    margin-top: 24px;
+    margin-top: 32px;
+    width: 100%;
 }
 
 .nav {
@@ -203,4 +210,21 @@ body {
 .pokemon-moves {
     display: flex;
     flex-direction: column;
+}
+
+tbody, td, tfoot, th, thead, tr {
+    padding-bottom: 24px;
+}
+
+.previous-next-arrow {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    cursor: pointer;
+    margin-left: 12px;
+    margin-right: 12px;
+}
+
+.previous-next-arrow:hover {
+    transform: scale(1.1);
 }

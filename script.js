@@ -140,6 +140,7 @@ function openPokemonCard(i) {
     colorizeBigCard(i);
     pokemonMoves(i);
     renderChart(i);
+    pokemonEvolution(i);
 }
 
 function pokemonTypesBigCard(i) {
@@ -205,10 +206,11 @@ function renderChart(i) {
 }
 
 function pokemonEvolution(i) {
-    let preEvolution = pokedex2[i]['evolves_from_species']['name'];
-    if (preEvolution === null) {
-        preEvolution = '';
+    let content = document.getElementById(`pokemonEvolution${i}`)
+    if (pokedex2[i]['evolves_from_species'] === null) {
+        content.innerHTML = 'unavailable';
     } else {
-       return preEvolution; 
+        let preEvolution = pokedex2[i]['evolves_from_species']['name'];
+        content.innerHTML = preEvolution; 
     }
-}
+}   

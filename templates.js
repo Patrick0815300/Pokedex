@@ -78,7 +78,7 @@ function openPokemonCardTemp(i) {
                         </div>
                         <div class="tab-pane fade" id="contact-tab-pane" role="tabpanel" aria-labelledby="contact-tab" tabindex="0">
                             <div>
-                                <span>${pokemonEvolution(i)}</span>
+                                <span id="pokemonEvolution${i}"></span>
                                 <!-- img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/${i-1}"> -->
                             </div>
                             

@@ -24,17 +24,17 @@ function openPokemonCardTemp(i) {
     return /* html */ `
         <div class="container-big-card">
             <div class="big-card">
-                <div class="big-card-top">
+                <div class="big-card-top" id="bigCardTop${i}">
                     <div style="display:flex; justify-content: space-between; width: 100%" >
                         <img class="icon" src="./img/arrow-left.svg" alt="arrow-back">
                         <img class="icon" src="./img/heart.svg" alt="like-button">
                     </div>
-                    <div style="display:flex; justify-content: space-between; width: 100%">
+                    <div class="big-card-name-and-id">
                         <span class="big-card-pokemon-name">${pokedex[i]['name']}</span>
-                        <span class="big-card-pokemon-name"># ${pokedex[i]['id']}</span>
+                        <span class="big-card-pokemon-id"># ${pokedex[i]['id']}</span>
                     </div>
                     <div style="display:flex; justify-content: flex-start; width: 100%">
-                        <span class="pokemon-type"></span>
+                        <div id="bigCardTypes${i}" style="display: flex;"></div>
                     </div>
                     <img class="big-card-pokemon-img" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/${i+1}.png" alt="Pokemon-IMG">
                 </div>
@@ -57,7 +57,7 @@ function openPokemonCardTemp(i) {
                     <div class="tab-content" id="myTabContent">
                         <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
                             <table class="about-table">
-                                <tr class="table-row">
+                                <tr>
                                     <td>Height</td>
                                     <td>${pokedex[i]['height']}"</td>
                                 </tr>
@@ -72,10 +72,20 @@ function openPokemonCardTemp(i) {
                             </table>
                         </div>
                         <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
+                            <div>
+                                <canvas id="myChart"></canvas>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="contact-tab-pane" role="tabpanel" aria-labelledby="contact-tab" tabindex="0">
+                            <div>
+                                <span>${pokemonEvolution(i)}</span>
+                                <!-- img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/${i-1}"> -->
+                            </div>
                             
                         </div>
-                        <div class="tab-pane fade" id="contact-tab-pane" role="tabpanel" aria-labelledby="contact-tab" tabindex="0">...</div>
-                        <div class="tab-pane fade" id="disabled-tab-pane" role="tabpanel" aria-labelledby="disabled-tab" tabindex="0">...</div>
+                        <div class="tab-pane fade" id="disabled-tab-pane" role="tabpanel" aria-labelledby="disabled-tab" tabindex="0">
+                            <div class="pokemon-moves" id="pokemonMoves${i}"></div>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -134,8 +134,8 @@ function changeFirstLoad() {
 }
 
 function openPokemonCard(i) {
-    let content = document.getElementById('container')
-    content.innerHTML += openPokemonCardTemp(i);
+    let content = document.getElementById('containerBigCard')
+    content.innerHTML = openPokemonCardTemp(i);
     pokemonTypesBigCard(i);
     colorizeBigCard(i);
     pokemonMoves(i);
@@ -215,7 +215,9 @@ function pokemonEvolution(i) {
 }   
 
 function closeBigCard() {
-    renderCardsContainer();
+    let content = document.getElementById('containerBigCard')
+    content.innerHTML = ''; 
+    
 }
 
 function handleClick(event) {
@@ -230,7 +232,10 @@ function handleClick(event) {
 function nextCard(i) {
     let newIndex = i + 1;
     closeBigCard();
-    openPokemonCard(newIndex);
+    if (newIndex < pokedex.length) {
+        openPokemonCard(newIndex);
+    }
+    
 }
 
 function previousCard(i) {
@@ -239,4 +244,21 @@ function previousCard(i) {
     if (newIndex >= 0) {
         openPokemonCard(newIndex);
     }
+}
+
+function searchPokemon() {
+    let search = document.getElementById('inputPokemon').value;
+    let content = document.getElementById('container');
+    content = '';
+    search = search.toLowerCase();
+
+    for (let i = 0; i < pokedex[i]['name'].length; i++) {
+        const name = pokedex[i]['name'];
+        if (name.toLowerCase().includes(search)) {
+            
+            content.innerHTML = renderCard(i);
+        } 
+    }
+    
+
 }

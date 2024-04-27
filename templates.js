@@ -27,7 +27,7 @@ function openPokemonCardTemp(i) {
             <div class="big-card">
                 <div class="big-card-top" id="bigCardTop${i}">
                     <div style="display:flex; justify-content: space-between; width: 100%" >
-                        <img class="icon" src="./img/arrow-left.svg" alt="arrow-back" onclick="closeBigCard(${i})">
+                        <img class="icon" src="./img/arrow-left.svg" alt="arrow-back">
                         <img class="icon" src="./img/heart.svg" alt="like-button">
                     </div>
                     <div class="big-card-name-and-id">
@@ -68,7 +68,7 @@ function openPokemonCardTemp(i) {
                                 </tr>
                                 <tr>
                                     <td>Abilities:</td>
-                                    <td>${pokedex[i]['abilities'][0]['ability']['name']}, ${pokedex[i]['abilities'][1]['ability']['name']}</td>
+                                    <td>${pokedex[i]['abilities'][0]['ability']['name']}</td>
                                 </tr>
                             </table>
                         </div>
@@ -90,7 +90,7 @@ function openPokemonCardTemp(i) {
                     </div>
                 </div>
             </div>
-            <div><img class="previous-next-arrow" src="./img/arrow-right-dark.svg" onclick="nextCard(${i})"></div>
+            <div class="pre-next-container"><img class="previous-next-arrow" src="./img/arrow-right-dark.svg" onclick="nextCard(${i})"></div>
         </div>
     `;
  

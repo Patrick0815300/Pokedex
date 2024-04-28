@@ -249,15 +249,16 @@ function previousCard(i) {
 function searchPokemon() {
     let search = document.getElementById('inputPokemon').value;
     let content = document.getElementById('container');
-    content = '';
     search = search.toLowerCase();
+    content.innerHTML = '';
 
-    for (let i = 0; i < pokedex[i]['name'].length; i++) {
+
+    for (let i = 0; i < firstLoad - 1; i++) {
         const name = pokedex[i]['name'];
-        if (name.toLowerCase().includes(search)) {
-            
-            content.innerHTML = renderCard(i);
-        } 
+        if (name.toLowerCase().includes(search) ) {
+            content.innerHTML += renderEmptyCard(i);
+            renderCard(i);
+        }
     }
     
 

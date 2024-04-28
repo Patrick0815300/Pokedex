@@ -27,7 +27,7 @@ function openPokemonCardTemp(i) {
             <div class="big-card">
                 <div class="big-card-top" id="bigCardTop${i}">
                     <div style="display:flex; justify-content: space-between; width: 100%" >
-                        <img class="icon" src="./img/arrow-left.svg" alt="arrow-back">
+                        <img class="icon" src="./img/arrow-left.svg" alt="arrow-back" onclick="closeBigCard()">
                         <img class="icon" src="./img/heart.svg" alt="like-button">
                     </div>
                     <div class="big-card-name-and-id">

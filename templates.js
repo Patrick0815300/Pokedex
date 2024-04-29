@@ -78,14 +78,14 @@ function openPokemonCardTemp(i) {
                             </div>
                         </div>
                         <div class="tab-pane fade" id="contact-tab-pane" role="tabpanel" aria-labelledby="contact-tab" tabindex="0">
-                            <div>
+                            <div style="padding-top: 24px;">
                                 <span id="pokemonEvolution${i}"></span>
                                 <!-- img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/${i-1}"> -->
                             </div>
                             
                         </div>
                         <div class="tab-pane fade" id="disabled-tab-pane" role="tabpanel" aria-labelledby="disabled-tab" tabindex="0">
-                            <div class="pokemon-moves" id="pokemonMoves${i}"></div>
+                            <div class="pokemon-moves" id="pokemonMoves${i}" style="padding-top: 24px;"></div>
                         </div>
                     </div>
                 </div>

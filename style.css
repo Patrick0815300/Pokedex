@@ -215,8 +215,6 @@ header {
     font-weight: bold;
 }
 
-
-
 .info-card {
     border: 1px solid lightgray;
     background-color: white;
@@ -275,6 +273,38 @@ tbody, td, tfoot, th, thead, tr {
     right: 0;
 }
 
+.container-loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+#loadingScreen {
+    background-color: rgba(0, 0, 0, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.loading-pokeball {
+    width: 10rem;
+    height: 10rem;
+    object-fit: cover;
+}
+
+.d-none{
+    display: none;
+}
+
+
+
+
 @media (max-width: 600px) {
     #myChart {
         width: 200px;
@@ -309,6 +339,16 @@ tbody, td, tfoot, th, thead, tr {
         width: 200px;
         height: 200px;
     }
+
+    .big-card-top {
+        padding: 20px;
+    }
+
+    .info-card {
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-bottom: 20px;
+    }
 }
 
 @media (max-width: 370px) {
@@ -321,5 +361,9 @@ tbody, td, tfoot, th, thead, tr {
         margin-top: 6px;
         margin-bottom: 6px;
         margin-left: 6px;
+    }
+
+    .big-card-pokemon-name {
+        font-size: 28px;
     }
 }

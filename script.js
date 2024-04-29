@@ -3,8 +3,10 @@ let pokedex2 = [];
 let firstLoad = 21; 
 
 async function init() {
-     await getPokedex();
-     renderCardsContainer();
+    document.getElementById('loadingScreen').style.display = 'flex';
+    await getPokedex();
+    hideLoading();
+    renderCardsContainer();
 }
 
 async function getPokedex() {
@@ -260,6 +262,8 @@ function searchPokemon() {
             renderCard(i);
         }
     }
-    
+}
 
+function hideLoading() {
+    document.getElementById('loadingScreen').style.display = 'none';
 }

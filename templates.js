@@ -15,7 +15,6 @@ function renderCardTemp(i) {
 function renderEmptyCard(i) {
     return /* html */ `
     <div class="pokemon-card" id="pokemonCard${i}" onclick="openPokemonCard(${i})">
-
     </div>     
     `;
 }
@@ -23,8 +22,8 @@ function renderEmptyCard(i) {
 function openPokemonCardTemp(i) {
     return /* html */ `
         <div class="container-big-card">
-            <div><img class="previous-next-arrow" src="./img/arrow-left-dark.svg" onclick="previousCard(${i})"></div>
-            <div class="big-card">
+            <div><img class="previous-next-arrow" src="./img/arrow-left-dark.svg" onclick="previousCard(${i}); notCloseBigCard(event)"></div>
+            <div class="big-card" onclick="notCloseBigCard(event)">
                 <div class="big-card-top" id="bigCardTop${i}">
                     <div style="display:flex; justify-content: space-between; width: 100%" >
                         <img class="icon" src="./img/arrow-left.svg" alt="arrow-back" onclick="closeBigCard()">
@@ -90,8 +89,7 @@ function openPokemonCardTemp(i) {
                     </div>
                 </div>
             </div>
-            <div class="pre-next-container"><img class="previous-next-arrow" src="./img/arrow-right-dark.svg" onclick="nextCard(${i})"></div>
+            <div class="pre-next-container"><img class="previous-next-arrow" src="./img/arrow-right-dark.svg" onclick="nextCard(${i}); notCloseBigCard(event)"></div>
         </div>
     `;
- 
 }

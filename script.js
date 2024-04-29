@@ -137,6 +137,7 @@ function changeFirstLoad() {
 
 function openPokemonCard(i) {
     let content = document.getElementById('containerBigCard')
+    content.classList.remove('d-none');
     content.innerHTML = openPokemonCardTemp(i);
     pokemonTypesBigCard(i);
     colorizeBigCard(i);
@@ -218,14 +219,24 @@ function pokemonEvolution(i) {
 
 function closeBigCard() {
     let content = document.getElementById('containerBigCard')
+    content.classList.add('d-none');
     content.innerHTML = ''; 
-    
+}
+
+window.onclick = function(event) {
+    let modal = document.getElementById('containerBigCard');
+    if (event.target == modal) {
+        closeBigCard();
+    }
+  }
+
+function notCloseBigCard(event) {
+    event.stopPropagation();
 }
 
 function handleClick(event) {
     const clickedElemtent = event.target
-    if (clickedElement.classList.contains('big-card')) {
-        
+    if (clickedElement.classList.contains('big-card')) { 
     } else {
         close();
     }
@@ -237,7 +248,6 @@ function nextCard(i) {
     if (newIndex < pokedex.length) {
         openPokemonCard(newIndex);
     }
-    
 }
 
 function previousCard(i) {
@@ -252,14 +262,15 @@ function searchPokemon() {
     let search = document.getElementById('inputPokemon').value;
     let content = document.getElementById('container');
     search = search.toLowerCase();
-    content.innerHTML = '';
-
-
-    for (let i = 0; i < firstLoad - 1; i++) {
+    
+    if (search.length >= 3) {
+        content.innerHTML = '';
+        for (let i = 0; i < firstLoad - 1; i++) {
         const name = pokedex[i]['name'];
-        if (name.toLowerCase().includes(search) ) {
+        if (name.toLowerCase().includes(search)) {
             content.innerHTML += renderEmptyCard(i);
             renderCard(i);
+            }
         }
     }
 }
